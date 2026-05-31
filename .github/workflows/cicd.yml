@@ -42,6 +42,11 @@ jobs:
     needs: build
     runs-on: self-hosted
     steps:
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Pull Docker image
         run: docker pull luannt08/ec2-uploader:latest
       - name: Stop and remove existing container
