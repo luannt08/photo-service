@@ -52,4 +52,4 @@ jobs:
       - name: Stop and remove existing container
         run: docker rm -f ec2-uploader-container
       - name: Run new container
-        run: docker run -d --name ec2-uploader-container -p 4040:80 luannt08/ec2-uploader:latest
+        run: docker run -d --name ec2-uploader-container -p 4040:8080 luannt08/ec2-uploader:latest
